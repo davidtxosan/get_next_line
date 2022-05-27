@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 12:11:45 by usuario           #+#    #+#             */
-/*   Updated: 2022/05/25 14:54:44 by usuario          ###   ########.fr       */
+/*   Updated: 2022/05/27 11:46:21 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,29 @@ char	*ft_read_and_save(int fd, char *save)
 char	*ft_get_line(char *save)
 {
 	int		i;
-	char	*s;
+	char	*c;
 
 	i = 0;
 	if (!save[i])
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2));
-	if (!s)
+	c = (char *)malloc(sizeof(char) * (i + 2));
+	if (!c)
 		return (NULL);
 	i = 0;
 	while (save[i] && save[i] != '\n')
 	{
-		s[i] = save[i];
+		c[i] = save[i];
 		i++;
 	}
 	if (save[i] == '\n')
 	{
-		s[i] = save[i];
+		c[i] = save[i];
 		i++;
 	}
-	s[i] = '\0';
-	return (s);
+	c[i] = '\0';
+	return (c);
 }
 
 char	*ft_save(char *save)
