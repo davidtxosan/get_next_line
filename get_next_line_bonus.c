@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:23:34 by davidsan          #+#    #+#             */
-/*   Updated: 2022/05/27 11:47:02 by usuario          ###   ########.fr       */
+/*   Updated: 2022/05/29 12:14:28 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ char	*ft_save(char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save[1024];
+	static char	*save[257];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
 	save[fd] = ft_read_and_save(fd, save[fd]);
 	if (!save[fd])
